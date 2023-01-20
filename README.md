@@ -1,15 +1,15 @@
-# Budget App
+# MovieDB
 
 ## Development
 
 ```
-docker-compose up --build movies
+docker-compose up --build movieDB
 ```
 
 ## Build
 
 ```
-docker build -t movies:$VERSION --target runtime .
+docker build -t movieDB:$VERSION --target runtime .
 ```
 
 ## Publishing (depends on Build)

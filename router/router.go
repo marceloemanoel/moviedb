@@ -9,7 +9,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/marceloemanoel/movies/db"
+	"github.com/marceloemanoel/movieDB/db"
 	"go.mongodb.org/mongo-driver/bson"
 )
 

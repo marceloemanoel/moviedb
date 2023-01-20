@@ -18,12 +18,12 @@ WORKDIR /app
 
 COPY . .
 
-RUN go build -o movies main.go
+RUN go build -o movieDB main.go
 
 
 FROM alpine as runtime
 
 COPY --from=build /app/wait-for-it.sh /app/
-COPY --from=build /app/movies /app/movies
+COPY --from=build /app/movieDB /app/movieDB
 
-CMD ["/app/movies"]
+CMD ["/app/movieDB"]

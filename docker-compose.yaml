@@ -10,7 +10,7 @@ services:
     build:
       context: .
       target: dev
-    container_name: movies
+    container_name: movieDB
     volumes:
       - ${PWD}:/app
     tty: true
@@ -22,8 +22,8 @@ services:
         "CompileDaemon",
         "-directory=/app",
         "-color=true",
-        "-build=go build -o ./build/movies main.go",
-        "-command=./build/movies"
+        "-build=go build -o ./build/movieDB main.go",
+        "-command=./build/movieDB"
       ]
     environment:
       - MONGODB_CONNSTRING=mongodb://mongodb:27017

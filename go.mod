@@ -1,4 +1,4 @@
-module github.com/marceloemanoel/movies
+module github.com/marceloemanoel/movieDB
 
 go 1.19
 

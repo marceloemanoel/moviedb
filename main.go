@@ -7,7 +7,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/marceloemanoel/movies/router"
+	"github.com/marceloemanoel/movieDB/router"
 )
 
 const DefaultPort int64 = 3000
