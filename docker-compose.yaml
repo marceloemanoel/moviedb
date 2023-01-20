@@ -6,7 +6,7 @@ services:
     ports:
       - 27017:27017
 
-  movies:
+  moviedb:
     build:
       context: .
       target: dev

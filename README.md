@@ -3,13 +3,13 @@
 ## Development
 
 ```
-docker-compose up --build movieDB
+docker-compose up --build moviedb
 ```
 
 ## Build
 
 ```
-docker build -t movieDB:$VERSION --target runtime .
+docker build -t moviedb:$VERSION --target runtime .
 ```
 
 ## Publishing (depends on Build)
