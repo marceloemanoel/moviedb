@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:5.0
+    ports:
+      - 27017:27017
+
+  movies:
+    build:
+      context: .
+      target: dev
+    container_name: movies
+    volumes:
+      - ${PWD}:/app
+    tty: true
+    command:
+      [
+        "/app/wait-for-it.sh",
+        "mongodb:27017",
+        "--",
+        "CompileDaemon",
+        "-directory=/app",
+        "-color=true",
+        "-build=go build -o ./build/movies main.go",
+        "-command=./build/movies"
+      ]
+    environment:
+      - MONGODB_CONNSTRING=mongodb://mongodb:27017
+
+    ports:
+      - 3000:3000
+    restart: always
+    depends_on:
+      - mongodb
